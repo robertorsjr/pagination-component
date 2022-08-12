@@ -26,6 +26,7 @@
     "prettier"
   ],
   "rules": {
+    "prettier/prettier": "error",
     "react/jsx-curly-newline": "off",
     "react/require-default-props": "off",
     // "react/jsx-one-expression-per-line": "off",
@@ -41,7 +42,6 @@
     "jsx-a11y/click-events-have-key-events": "off",
     "react/prop-types": "off",
     "no-use-before-define": "off",
-    "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-inferrable-types": "off",
