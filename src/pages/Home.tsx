@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { listItems } from '../services/list'
+import { Flex, Text } from '@chakra-ui/react'
 
 function Home() {
-  const [data, setData] = useState<any[]>()
+  const [data, setData] = useState<[{ name: string }]>()
 
   useEffect(() => {
     async function getData() {
@@ -17,11 +18,11 @@ function Home() {
   }, [])
 
   return (
-    <div>
+    <Flex flexDir={'column'}>
       {data?.map((item) => (
-        <text key={item.name}>{item.name}</text>
+        <Text key={item.name}>{item.name}</Text>
       ))}
-    </div>
+    </Flex>
   )
 }
 
