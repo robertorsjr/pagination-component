@@ -8,7 +8,7 @@ function Home() {
     async function getData() {
       try {
         const { data } = await listItems()
-        setData(data?.results)
+        setData(data.results)
       } catch (error) {
         console.log(error)
       }
