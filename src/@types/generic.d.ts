@@ -11,3 +11,8 @@ interface PaginationQueryParameters {
   page?: number
   pageSize?: number
 }
+
+interface SortingQueryParameters {
+  sortingProperty?: string
+  sortingDirection?: 'ASC' | 'DESC'
+}
