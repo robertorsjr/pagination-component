@@ -1,6 +1,6 @@
 # Test demo :rocket:
 
- [<img src="https://img.shields.io/static/v1?label=Demo&message=Online&color=gren&style=for-the-badge&logo=Vercel"/>](https://pagination-component-713sf3jac-robertorsjr.vercel.app/)
+ [<img src="https://img.shields.io/static/v1?label=Demo&message=Online&color=gren&style=for-the-badge&logo=Vercel"/>](https://pagination-component-pink.vercel.app/)
  
 
 # :checkered_flag: Getting Started
