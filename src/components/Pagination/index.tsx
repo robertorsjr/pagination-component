@@ -18,17 +18,16 @@ const PagePagination = ({
     <Flex
       flexDir={{ lg: 'row', md: 'column', sm: 'column' }}
       alignItems="center"
+      justify="space-between"
       mt="40px"
       gridRowGap={4}
     >
-      {pagination && (
+      {!!pagination && (
         <>
           <Flex ml="1%" alignItems="center">
-            <Box minW="200px">
-              <Text color="gray.500" alignSelf="center">
-                aqui vai a quantidade de linhas e items listados
-              </Text>
-            </Box>
+            <Text color="gray.500" alignSelf="center">
+              Linhas
+            </Text>
             {!pageSizeFixed && (
               <Box width="127px">
                 <Select
@@ -54,7 +53,7 @@ const PagePagination = ({
           <Pagination
             onPageChange={(page: number) => onPageChange({ page })}
             totalCount={pagination.totalItems || 0}
-            currentPage={Number(pagination.page) || 0}
+            currentPage={Number(pagination.page)}
             pageSize={pagination.pageSize || 0}
           />
         </>

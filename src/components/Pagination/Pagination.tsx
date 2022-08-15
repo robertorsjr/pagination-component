@@ -1,5 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
-import { HStack } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 
 import Button from '../Button'
 import { DOTS, usePagination } from '../../hooks/usePagination'
@@ -37,7 +37,7 @@ const Pagination = ({
   }
 
   return (
-    <HStack mt={4} spacing="24px" width="full" justify="center" marginTop="0">
+    <Flex mt={4} gridGap="24px" justify="center" marginTop="0">
       <Button variant="ghost" disabled={currentPage === 1} onClick={onPrevious}>
         <ChevronLeftIcon />
       </Button>
@@ -74,7 +74,7 @@ const Pagination = ({
       >
         <ChevronRightIcon />
       </Button>
-    </HStack>
+    </Flex>
   )
 }
 
