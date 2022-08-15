@@ -5,8 +5,6 @@ export interface PaginationPayload extends PaginationQueryParameters {
   totalItems?: number
 }
 
-export type ListQueryParameters = PaginationQueryParameters
-
 interface PaginationQueryParameters {
   page?: number
   pageSize?: number
@@ -15,4 +13,13 @@ interface PaginationQueryParameters {
 interface SortingQueryParameters {
   sortingProperty?: string
   sortingDirection?: 'ASC' | 'DESC'
+}
+
+export interface ListQueryParameters
+  extends SortingQueryParameters,
+    PaginationQueryParameters {}
+
+interface PaginationQueryParameters {
+  page?: number
+  pageSize?: number
 }
