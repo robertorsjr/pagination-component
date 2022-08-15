@@ -5,8 +5,8 @@ const api = axios.create({
 })
 
 const endpoints = {
-  listItems: (offset = 20, limit = 20) =>
-    `/pokemon/?offset=${offset}&limit=${limit}`
+  listItems: (offset = 1, limit = 10) =>
+    `/pokemon/?offset=${offset * limit}&limit=${limit}`
 }
 
 export { api, endpoints }
