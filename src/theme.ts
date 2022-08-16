@@ -43,6 +43,13 @@ export const theme = extendTheme({
       900: '#282832'
     }
   },
+  breakpoints: {
+    sm: '320px',
+    md: '768px',
+    lg: '960px',
+    xl: '1200px',
+    xxl: '1336px'
+  },
   styles: {
     global: {
       body: {
