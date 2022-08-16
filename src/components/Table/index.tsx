@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { TableContainerProps } from './TableInterfaces'
 import { Box } from '@chakra-ui/react'
 import TableComponent from './Table'
-import Pagination from '../Pagination'
+import { PagePagination } from '../Pagination'
 
-function Table({
+function TableContainer({
   nameTable,
   isEmpty,
   isLoading,
@@ -23,7 +23,7 @@ function Table({
         isEmpty={isEmpty}
         isLoading={isLoading}
       />
-      <Pagination
+      <PagePagination
         pagination={metadata}
         onPageChange={handleSort}
         pageSizeFixed={pageSizeFixed}
@@ -32,4 +32,4 @@ function Table({
   )
 }
 
-export default Table
+export const Table = memo(TableContainer)

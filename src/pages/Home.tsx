@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { listItems } from '../services/list'
 import { Box, Flex } from '@chakra-ui/react'
-import Table from '../components/Table'
+import { Table } from '../components/Table'
 import { ListMetadata, PaginationPayload } from '../@types/generic'
 import useSafePromise from '../hooks/useSafePromise'
 
@@ -20,21 +20,24 @@ function Home() {
 
   useEffect(() => {
     async function getData() {
-      await safe(listItems(metadata.page, metadata.pageSize), setData)
+      const { page, pageSize } = metadata
+      await safe(listItems(page, pageSize), setData)
     }
     getData()
-  }, [])
+  }, [safe])
 
   useEffect(() => {
     async function setNewMetadata() {
-      setMetadata({ ...metadata, totalItems: data?.count })
+      setMetadata((oldMetadata) => {
+        return { ...oldMetadata, totalItems: data?.count }
+      })
     }
     setNewMetadata()
   }, [data])
 
   const handleMetadata = async (newMetadata: Partial<ListMetadata>) => {
     setMetadata({ ...metadata, ...newMetadata })
-    await safe(listItems(metadata.page, metadata.pageSize), setData)
+    await safe(listItems(newMetadata.page, newMetadata.pageSize), setData)
   }
 
   const columns = [

@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
 function useSafePromise() {
   const [isLoading, setIsLoading] = useState(false)
   const [isEmpty, setIsEmpty] = useState(false)
   const [isError, setIsError] = useState(false)
 
-  async function safe(api: any, setData: any) {
+  const safe = useCallback(async (api: any, setData: any) => {
     try {
       setIsLoading(true)
       const { data } = await api
@@ -16,7 +16,8 @@ function useSafePromise() {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [])
+
   return {
     safe,
     isLoading,

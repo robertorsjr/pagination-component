@@ -2,6 +2,7 @@ import { Box, Flex, Select, Text } from '@chakra-ui/react'
 
 import Pagination from './Pagination'
 import { PaginationPayload } from '../../@types/generic'
+import { memo } from 'react'
 
 interface PagePaginationProps {
   pagination: PaginationPayload
@@ -9,7 +10,7 @@ interface PagePaginationProps {
   pageSizeFixed?: boolean
 }
 
-const PagePagination = ({
+const PagePaginationComponent = ({
   pagination,
   onPageChange,
   pageSizeFixed
@@ -38,7 +39,7 @@ const PagePagination = ({
                   onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                     onPageChange({
                       pageSize: parseInt(e.target.value),
-                      page: 1
+                      page: pagination.page
                     })
                   }
                 >
@@ -62,4 +63,4 @@ const PagePagination = ({
   )
 }
 
-export default PagePagination
+export const PagePagination = memo(PagePaginationComponent)

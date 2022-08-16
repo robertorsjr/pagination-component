@@ -20,7 +20,8 @@ export const theme = extendTheme({
         }
       },
       defaultProps: {
-        variant: 'striped'
+        variant: 'striped',
+        borderRadius: 4
       }
     }
   },
