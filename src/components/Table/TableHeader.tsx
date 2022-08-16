@@ -7,9 +7,9 @@ function TableHeader({ headers }: HeaderProps) {
     headers && (
       <Thead>
         <Tr>
-          {headers.map((headerColumn, index) => {
+          {headers.map((headerColumn) => {
             const { header, accessor } = headerColumn
-            return <Th key={index}>{header}</Th>
+            return <Th key={header}>{header}</Th>
           })}
         </Tr>
       </Thead>

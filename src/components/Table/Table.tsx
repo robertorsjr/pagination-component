@@ -15,7 +15,7 @@ const Table: React.FC<TableProps> = ({
   isEmpty
 }: TableProps) => {
   return (
-    <TableChakra id={id} variant="striped">
+    <TableChakra id={id}>
       {isLoading ? (
         <TableBodyLoading columns={headerColumns} rows={rows} />
       ) : isEmpty ? (

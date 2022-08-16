@@ -64,7 +64,7 @@ function Home() {
 
   return (
     <Flex align={'center'} justify={'center'} p={10}>
-      <Box boxShadow={'xl'} w={'full'} p={4}>
+      <Box boxShadow={'xl'} w={'full'} p={4} bgColor={'white'}>
         <Table
           headerColumns={columns}
           rows={rows}
