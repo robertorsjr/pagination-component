@@ -1,5 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
-import { Flex } from '@chakra-ui/react'
+import { Flex, useBreakpointValue } from '@chakra-ui/react'
 
 import Button from '../Button'
 import { DOTS, usePagination } from '../../hooks/usePagination'
@@ -17,10 +17,15 @@ const Pagination = ({
   currentPage,
   pageSize
 }: PaginationProps) => {
+  const isWide = useBreakpointValue({
+    lg: true,
+    sm: false
+  })
   const paginationRange = usePagination({
     currentPage,
     totalCount,
-    pageSize
+    pageSize,
+    siblingCount: isWide ? 2 : 1
   })
   const lastPage = paginationRange?.[paginationRange?.length - 1]
 
